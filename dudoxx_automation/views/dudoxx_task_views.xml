@@ -1,0 +1,10 @@
+<record id="view_dudoxx_task_tree" model="ir.ui.view">
+    <field name="name">dudoxx.task.tree</field>
+    <field name="model">dudoxx.task</field>
+    <field name="arch" type="xml">
+        <tree string="Tasks">
+            <field name="name"/>
+            <field name="status"/>
+        </tree>
+    </field>
+</record>

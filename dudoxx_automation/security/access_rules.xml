@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="rule_dudoxx_task_user" model="ir.rule">
+            <field name="name">Dudoxx Task User</field>
+            <field name="model_id" ref="model_dudoxx_task"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">[('status', '=', 'in_progress')]</field>
+        </record>
+    </data>
+</odoo>
