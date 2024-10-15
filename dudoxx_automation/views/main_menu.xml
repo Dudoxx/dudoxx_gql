@@ -1,1 +1,5 @@
-<menuitem id="menu_dudoxx_automation_root" name="Dudoxx Automation" sequence="10"/>
+<odoo>
+    <data>
+        <menuitem id="menu_dudoxx_automation_root" name="Dudoxx Automation" sequence="10"/>
+    </data>
+</odoo>
