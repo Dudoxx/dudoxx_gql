@@ -1,10 +1,36 @@
 <odoo>
     <data>
+        <!-- Define the Group Category -->
+        <record id="dudoxx_group_category" model="ir.module.category">
+            <field name="name">Dudoxx Task Management</field>
+            <field name="description">Category for Dudoxx Task Management Permissions</field>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Define the User Group -->
+        <record id="group_dudoxx_task_user" model="res.groups">
+            <field name="name">Dudoxx Task User</field>
+            <field name="category_id" ref="dudoxx_group_category"/>
+            <field name="comment">Group for users allowed to access and manage Dudoxx tasks</field>
+        </record>
+
+        <!-- Access Control List (ACL) for the Dudoxx Task User Group -->
+        <record id="access_dudoxx_task_user" model="ir.model.access">
+            <field name="name">Access Dudoxx Task User</field>
+            <field name="model_id" ref="model_dudoxx_task"/>
+            <field name="group_id" ref="group_dudoxx_task_user"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <!-- Security Rule for the Dudoxx Task User Group -->
         <record id="rule_dudoxx_task_user" model="ir.rule">
             <field name="name">Dudoxx Task User</field>
             <field name="model_id" ref="model_dudoxx_task"/>
-            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
-            <field name="domain_force">[('status', '=', 'in_progress')]</field>
+            <field name="groups" eval="[(4, ref('group_dudoxx_task_user'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field> <!-- Modify domain as needed -->
         </record>
     </data>
 </odoo>

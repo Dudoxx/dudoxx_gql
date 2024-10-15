@@ -1,5 +1,26 @@
 <odoo>
     <data>
-        <menuitem id="menu_dudoxx_automation_root" name="Dudoxx Automation" sequence="10"/>
+        <!-- Action to Open Dudoxx Task List View -->
+        <record id="action_dudoxx_task" model="ir.actions.act_window">
+            <field name="name">Dudoxx Tasks</field>
+            <field name="res_model">dudoxx.task</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create and manage Dudoxx tasks here.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Item for Dudoxx Task App in Top-Level Menu -->
+        <menuitem id="menu_dudoxx_root" name="Dudoxx" sequence="10"/>
+
+        <!-- Submenu for Dudoxx Task under the Root Dudoxx Menu -->
+        <menuitem id="menu_dudoxx_task" 
+                  name="Tasks" 
+                  parent="menu_dudoxx_root" 
+                  action="action_dudoxx_task" 
+                  sequence="20" 
+                  groups="group_dudoxx_task_user"/>
     </data>
 </odoo>

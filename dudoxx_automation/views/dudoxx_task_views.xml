@@ -1,5 +1,12 @@
 <odoo>
     <data>
+        <!-- Model Definition -->
+        <record id="model_dudoxx_task" model="ir.model">
+            <field name="name">dudoxx.task</field>
+            <field name="model">dudoxx.task</field>
+        </record>
+
+        <!-- View Definition -->
         <record id="view_dudoxx_task_tree" model="ir.ui.view">
             <field name="name">dudoxx.task.tree</field>
             <field name="model">dudoxx.task</field>

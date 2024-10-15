@@ -7,4 +7,8 @@ class DudoxxTask(models.Model):
     name = fields.Char(string="Task Name", required=True)
     description = fields.Text(string="Description")
     due_date = fields.Date(string="Due Date")
-    status = fields.Selection([('new', 'New'), ('in_progress', 'In Progress'), ('done', 'Done')], default='new')
+    status = fields.Selection(
+        [('new', 'New'), ('in_progress', 'In Progress'), ('done', 'Done')],
+        string="Status",
+        default='new'
+    )
