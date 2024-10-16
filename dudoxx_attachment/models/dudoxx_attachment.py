@@ -20,6 +20,14 @@ class DudoxxAttachment(models.Model):
     file_data = fields.Binary(string='File Data')
     hash_code = fields.Char(string='Hash Code', compute='compute_hash_code', store=True)
 
+    @api.model
+    def default_get(self, fields_list):
+        defaults = super().default_get(fields_list)
+        if 'status' in fields_list and defaults.get('status') is None:
+            defaults['status'] = 'draft'
+        return defaults
+
+
     @api.depends('file_data')
     def compute_hash_code(self):
         for record in self:
