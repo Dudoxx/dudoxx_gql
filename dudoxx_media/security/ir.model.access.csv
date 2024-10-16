@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dudoxx_media_file_user,dudoxx.media.file.user,model_dudoxx_media_file,dudoxx_media.group_dudoxx_media_user,1,1,1,0
+access_dudoxx_media_file_reviewer,dudoxx.media.file.reviewer,model_dudoxx_media_file,dudoxx_media.group_dudoxx_media_reviewer,1,1,1,1
+access_dudoxx_media_file_admin,dudoxx.media.file.admin,model_dudoxx_media_file,dudoxx_media.group_dudoxx_media_admin,1,1,1,1
+access_dudoxx_media_category_user,dudoxx.media.category.user,model_dudoxx_media_category,dudoxx_media.group_dudoxx_media_user,1,0,0,0
+access_dudoxx_media_category_reviewer,dudoxx.media.category.reviewer,model_dudoxx_media_category,dudoxx_media.group_dudoxx_media_reviewer,1,1,1,0
+access_dudoxx_media_category_admin,dudoxx.media.category.admin,model_dudoxx_media_category,dudoxx_media.group_dudoxx_media_admin,1,1,1,1
+access_dudoxx_media_tag_user,dudoxx.media.tag.user,model_dudoxx_media_tag,dudoxx_media.group_dudoxx_media_user,1,1,1,0
+access_dudoxx_media_tag_reviewer,dudoxx.media.tag.reviewer,model_dudoxx_media_tag,dudoxx_media.group_dudoxx_media_reviewer,1,1,1,1
+access_dudoxx_media_tag_admin,dudoxx.media.tag.admin,model_dudoxx_media_tag,dudoxx_media.group_dudoxx_media_admin,1,1,1,1
