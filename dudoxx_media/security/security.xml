@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Security Groups -->
+    <record id="group_dudoxx_media_admin" model="res.groups">
+        <field name="name">Dudoxx Media Admin</field>
+        <field name="category_id" ref="module_category_dudoxx_media"/>
+    </record>
+    <record id="group_dudoxx_media_user" model="res.groups">
+        <field name="name">Dudoxx Media User</field>
+        <field name="category_id" ref="module_category_dudoxx_media"/>
+    </record>
+    <record id="group_dudoxx_media_reviewer" model="res.groups">
+        <field name="name">Dudoxx Media Reviewer</field>
+        <field name="category_id" ref="module_category_dudoxx_media"/>
+    </record>
+
+    <!-- Security Categories -->
+    <record id="module_category_dudoxx_media" model="ir.module.category">
+        <field name="name">Dudoxx Media</field>
+        <field name="description">Dudoxx Media Management</field>
+        <field name="sequence">10</field>
+    </record>
+</odoo>
