@@ -24,10 +24,7 @@
 						<button name="approve_review" type="object" string="Approve Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
 						<button name="reject_review" type="object" string="Reject Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
 						<button name="finalize_document" type="object" string="Finalize" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'reviewed')]}"/>
-
-						<button name="back_to_draft" type="object" string="Back to Draft" class="ddx_attachment_btn" attrs="{'invisible': ['|', ('status', '!=', 'pending_review'), ('status', '!=', 'rejected')]}"/>
-						<button name="back_to_pending_review" type="object" string="Back to Pending Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'reviewed')]}"/>
-						<button name="back_to_review" type="object" string="Back to Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'finalized')]}"/>
+						<button name="reset_to_draft" type="object" string="Reset to Draft" class="ddx_attachment_btn"/>
 					</header>
 					<sheet>
 						<div class="ddx_attachment_form_section ddx_attachment_grid_2">
