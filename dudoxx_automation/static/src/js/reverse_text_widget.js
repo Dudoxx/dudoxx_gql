@@ -1,19 +1,52 @@
-// static/src/js/reverse_text_widget.js
-odoo.define('dudoxx_automation.ReverseTextWidget', function (require) {
-    "use strict";
+/** @odoo-module **/
+
+import { registry } from "@web/core/registry";
+import { Component, useState, onWillUpdateProps } from "@odoo/owl";
+import { standardFieldProps } from "@web/views/fields/standard_field_props";
+
+console.log("Loading ReverseTextWidget...");
+
+export class ReverseTextWidget extends Component {
+    setup() {
+        console.log("Setting up ReverseTextWidget...");
+
+        // Initialize state with reversed text
+        const originalText = this.props.value || '';
+        console.log("Initial text loaded:", originalText);
+
+        this.state = useState({
+            reversedText: this.reverseText(originalText),
+        });
+
+        // Log the initial reversed text
+        console.log("Initial reversed text:", this.state.reversedText);
+
+        // Update reversed text when props.value changes
+        onWillUpdateProps((nextProps) => {
+            const updatedText = nextProps.value || '';
+            console.log("Updated text from props:", updatedText);
+            this.state.reversedText = this.reverseText(updatedText);
+            console.log("Updated reversed text:", this.state.reversedText);
+        });
+    }
     
-    const AbstractField = require('web.AbstractField');
-    const fieldRegistry = require('web.field_registry');
+    reverseText(text) {
+        console.log("Reversing text:", text);
+        const reversed = text.split('').reverse().join('');
+        console.log("Reversed result:", reversed);
+        return reversed;
+    }
+}
 
-    const ReverseTextWidget = AbstractField.extend({
-        _render: function () {
-            const originalText = this.value || '';
-            const reversedText = originalText.split('').reverse().join('');
-            this.$el.text(reversedText);
-        },
-    });
+// Standard props to ensure compatibility
+ReverseTextWidget.props = {
+    ...standardFieldProps,
+};
 
-    fieldRegistry.add('reverse_text', ReverseTextWidget);
+// Define the template for the widget
+ReverseTextWidget.template = "dudoxx_automation.ReverseTextWidget";
 
-    return ReverseTextWidget;
-});
+// Registering the widget
+registry.category("fields").add("reverse_text", ReverseTextWidget);
+
+console.log("ReverseTextWidget registered in the registry.");

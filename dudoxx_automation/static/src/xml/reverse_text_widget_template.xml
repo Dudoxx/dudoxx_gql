@@ -1,0 +1,11 @@
+<templates>
+    <t t-name="dudoxx_automation.ReverseTextWidget" owl="1">
+        <div class="o_reverse_text_widget">
+            <!-- Title attribute to display the original text on hover -->
+            <div t-att-title="props.value" class="reversed-text">
+                <!-- Render the reversed text stored in the state -->
+                <t t-esc="state.reversedText"/>
+            </div>
+        </div>
+    </t>
+</templates>

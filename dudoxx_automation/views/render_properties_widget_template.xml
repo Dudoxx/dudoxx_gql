@@ -1,0 +1,13 @@
+<!-- views/render_properties_widget_template.xml -->
+<templates>
+    <t t-name="dudoxx_automation.RenderPropertiesWidget" owl="1">
+        <div class="o_render_properties_widget">
+            <t t-foreach="Object.keys(state.properties)" t-as="prop">
+                <div class="property-field">
+                    <strong><t t-esc="prop"/>:</strong>
+                    <span t-esc="state.properties[prop]"/>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

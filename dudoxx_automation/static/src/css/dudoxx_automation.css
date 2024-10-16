@@ -1,0 +1,31 @@
+/* Main container for the reverse text widget */
+.o_reverse_text_widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Styling for the text container where the reversed text is displayed */
+.o_reverse_text_widget .reversed-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #0056b3;
+    text-align: center;
+}
+
+/* Tooltip on hover to show the original text */
+.o_reverse_text_widget .reversed-text:hover {
+    color: #003366;
+    cursor: help;
+}
+
+/* Optional: Add transitions for smooth text color changes on hover */
+.o_reverse_text_widget .reversed-text {
+    transition: color 0.3s ease;
+}
