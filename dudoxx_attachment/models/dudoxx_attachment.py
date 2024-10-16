@@ -50,18 +50,19 @@ class DudoxxAttachment(models.Model):
 
     def back_to_draft(self):
         for record in self:
-            if record.status == 'pending_review':
+            if record.status in ('pending_review', 'rejected'):
                 record.status = 'draft'
 
     def back_to_pending_review(self):
         for record in self:
-            if record.status in ('reviewed', 'rejected', 'finalized'):
+            if record.status in ('reviewed', 'finalized'):
                 record.status = 'pending_review'
 
-    def back_to_review(self):
+    def set_to_rejected(self):
         for record in self:
-             if record.status == 'finalized':
-                record.status = 'reviewed'
+            if record.status == 'draft':
+                record.status = 'rejected'
+
 
     def update_checksum(self):
         for record in self:
