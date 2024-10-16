@@ -1,0 +1,56 @@
+/* Media File Form */
+.ddx_media_form .oe_title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ddx_media_form .o_group {
+    margin-bottom: 20px;
+}
+
+.ddx_media_form .o_group .o_field_widget {
+    width: 100%;
+}
+
+.ddx_media_form .o_notebook {
+    margin-top: 20px;
+}
+
+/* Media File Tree */
+.ddx_media_tree .o_list_view {
+    font-size: 14px;
+}
+
+.ddx_media_tree .o_list_view th,
+.ddx_media_tree .o_list_view td {
+    padding: 8px 12px;
+}
+
+/* Media File Kanban */
+.ddx_media_kanban .o_kanban_record {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.ddx_media_kanban .o_kanban_image {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #aaa;
+}
+
+.ddx_media_kanban .o_kanban_details {
+    margin-top: 10px;
+}
+
+.ddx_media_kanban .oe_kanban_tag {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}

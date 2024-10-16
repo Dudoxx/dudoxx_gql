@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dudoxx_media_admin" model="res.groups">
+        <field name="name">Dudoxx Media Admin</field>
+    </record>
+
+    <record id="dudoxx_media_user" model="res.groups">
+        <field name="name">Dudoxx Media User</field>
+    </record>
+
+    <record id="dudoxx_media_reviewer" model="res.groups">
+        <field name="name">Dudoxx Media Reviewer</field>
+    </record>
+
+    <data noupdate="1">
+        <record id="dudoxx_media_category_access" model="ir.rule">
+            <field name="name">Dudoxx Media Category Access</field>
+            <field name="model_id" ref="model_dudoxx_media_category"/>
+            <field name="global" eval="True"/>
+            <field name="groups" eval="[(4, ref('dudoxx_media_admin'))]"/>
+        </record>
+
+        <record id="dudoxx_media_tag_access" model="ir.rule">
+            <field name="name">Dudoxx Media Tag Access</field>
+            <field name="model_id" ref="model_dudoxx_media_tag"/>
+            <field name="global" eval="True"/>
+            <field name="groups" eval="[(4, ref('dudoxx_media_admin'))]"/>
+        </record>
+
+        <record id="dudoxx_media_file_access" model="ir.rule">
+            <field name="name">Dudoxx Media File Access</field>
+            <field name="model_id" ref="model_dudoxx_media_file"/>
+            <field name="domain_force">['|', ('owner_id', '=', user.id), ('status', '=', 'published')]</field>
+            <field name="groups" eval="[(4, ref('dudoxx_media_user')), (4, ref('dudoxx_media_reviewer')), (4, ref('dudoxx_media_admin'))]"/>
+        </record>
+    </data>
+</odoo>
