@@ -1,9 +1,25 @@
-<!-- static/src/xml/countdown_widget_template.xml -->
 <templates>
     <t t-name="dudoxx_automation.CountdownWidget" owl="1">
-        <div class="o_countdown_widget">
-            <div t-att-style="'font-size: ' + state.fontSize + 'px;'">
-                <t t-esc="state.countdown"/>
+        <div class="floating-container" t-att-class="state.isAlert ? 'alert' : ''">
+            <div class="countdown-display">
+                <span class="countdown-digit"><t t-esc="state.minutes[0]"/></span>
+                <span class="countdown-digit"><t t-esc="state.minutes[1]"/></span>
+                <span>:</span>
+                <span class="countdown-digit"><t t-esc="state.seconds[0]"/></span>
+                <span class="countdown-digit"><t t-esc="state.seconds[1]"/></span>
+                <span>.</span>
+                <span class="countdown-digit"><t t-esc="state.milliseconds"/></span>
+            </div>
+            <div class="button-group">
+                <button class="start-button" t-att-disabled="state.isRunning" t-on-click="startCountdown">
+                    <i class="fa fa-play"></i>
+                </button>
+                <button class="pause-button" t-att-disabled="!state.isRunning" t-on-click="pauseCountdown">
+                    <i class="fa fa-pause"></i>
+                </button>
+                <button class="stop-button" t-att-disabled="!state.isRunning" t-on-click="stopCountdown">
+                    <i class="fa fa-stop"></i>
+                </button>
             </div>
         </div>
     </t>

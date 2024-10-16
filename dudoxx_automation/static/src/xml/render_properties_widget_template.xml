@@ -1,13 +1,28 @@
-<!-- views/render_properties_widget_template.xml -->
 <templates>
     <t t-name="dudoxx_automation.RenderPropertiesWidget" owl="1">
         <div class="o_render_properties_widget">
-            <t t-foreach="Object.keys(state.properties)" t-as="prop">
-                <div class="property-field">
-                    <strong><t t-esc="prop"/>:</strong>
-                    <span t-esc="state.properties[prop]"/>
-                </div>
-            </t>
+            <table class="property-table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through the keys in the updated state properties -->
+                    <t t-foreach="Object.keys(state.properties)" t-as="prop" t-key="prop">
+                        <tr>
+                            <td><strong><t t-esc="state.labels[prop]"/></strong></td>
+                            <td>
+                                <!-- Apply class based on type and format the displayed value -->
+                                <span t-att-class="this.getClassForType(prop)">
+                                    <t t-out="this.formatValue(prop, state.properties[prop])"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
         </div>
     </t>
 </templates>

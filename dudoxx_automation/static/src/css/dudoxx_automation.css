@@ -29,3 +29,62 @@
 .o_reverse_text_widget .reversed-text {
     transition: color 0.3s ease;
 }
+
+.o_render_properties_widget .property-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.o_render_properties_widget .property-table th,
+.o_render_properties_widget .property-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.o_render_properties_widget .property-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.o_render_properties_widget .property-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+.o_render_properties_widget .property-table th,
+.o_render_properties_widget .property-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.o_render_properties_widget .property-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Style for boolean fields */
+.field-boolean {
+    color: #2f7a3e; /* Green for true/false values */
+    font-weight: bold;
+}
+
+/* Style for date fields */
+.field-date {
+    color: #1a73e8; /* Blue for dates */
+    font-style: italic;
+}
+
+/* Style for text fields */
+.field-text {
+    color: #333; /* Dark gray for descriptive text */
+    line-height: 1.5;
+    white-space: pre-wrap; /* Preserve line breaks for multi-line text */
+}
+
+/* Default styling for other fields */
+.field-default {
+    color: #666;
+}

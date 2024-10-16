@@ -1,0 +1,90 @@
+/* Floating container for countdown widget */
+.floating-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Countdown display styling */
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #4CAF50;
+    background-color: #f0fff0;
+    border: 2px solid #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Alert styling for the last 4 seconds */
+.alert .countdown-display {
+    color: #ffffff;
+    background-color: #ff0000;
+}
+
+/* Individual digit styling */
+.countdown-digit {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Button styling */
+.start-button, .pause-button, .stop-button {
+    padding: 5px 8px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.start-button {
+    background-color: #4CAF50;
+}
+
+.pause-button {
+    background-color: #FF9800;
+}
+
+.stop-button {
+    background-color: #f44336;
+}
+
+.start-button:hover {
+    background-color: #45a049;
+}
+
+.pause-button:hover {
+    background-color: #FB8C00;
+}
+
+.stop-button:hover {
+    background-color: #e53935;
+}
+
+/* Disabled button styling */
+.start-button:disabled, .pause-button:disabled, .stop-button:disabled {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+}

@@ -9,6 +9,9 @@
                 <tree string="Tasks">
                     <field name="name"/>
                     <field name="status"/>
+                    <field name="priority_level"/>
+                    <field name="due_date"/>
+                    <field name="file_name"/>
                 </tree>
             </field>
         </record>
@@ -21,12 +24,26 @@
                 <form string="Dudoxx Task">
                     <sheet>
                         <group>
-                            <!-- Apply the RenderPropertiesWidget to display parent record properties -->
-                            <field name="name" widget="render_properties" options="{'recordData': {'name': 'Task Name', 'status': 'Status'}}"/>
                             <field name="name"/>
+                            <field name="task_code"/>
                             <field name="status"/>
-                            <!-- Apply the CountdownWidget to display a countdown -->
+                            <field name="is_urgent"/>
+                            <field name="priority_level"/>
+                            <field name="due_date"/>
+                            <field name="completion_date"/>
+                        </group>
+                        <group>
+                            <field name="progress"  />
+                              <field name="countdown_field" />
                             <field name="countdown_field" widget="countdown_widget"/>
+                            <field name="description"/>
+                        </group>
+                        <group string="File Information">
+                            <!-- Filename will be automatically recorded when file is uploaded -->
+                            <field name="file_name" readonly="0"/>
+                            <field name="file_data" filename="file_name"/>
+
+                            <field name="name" widget="render_properties"/>
                         </group>
                     </sheet>
                 </form>
