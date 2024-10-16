@@ -22,9 +22,11 @@
                     <sheet>
                         <group>
                             <!-- Apply the RenderPropertiesWidget to display parent record properties -->
-                            <field name="properties" widget="render_properties"/>
+                            <field name="name" widget="render_properties"/>
                             <field name="name"/>
                             <field name="status"/>
+                            <!-- Apply the CountdownWidget to display a countdown -->
+                            <field name="name" widget="countdown_widget"/>
                         </group>
                     </sheet>
                 </form>

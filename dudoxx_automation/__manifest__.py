@@ -9,7 +9,6 @@
         "security/access_rules.xml",
         "views/main_menu.xml",
         "views/dudoxx_task_views.xml",
-        "views/render_properties_widget_template.xml"
     ],
     "assets": {
         "web.assets_frontend": [
@@ -19,9 +18,12 @@
         "web.assets_backend": [
             "/dudoxx_automation/static/src/js/reverse_text_widget.js",
             "/dudoxx_automation/static/src/xml/reverse_text_widget_template.xml",
+            "/dudoxx_automation/static/src/xml/render_properties_widget_template.xml",
             "/dudoxx_automation/static/src/js/**/*",
             "/dudoxx_automation/static/src/xml/**/*",
-            "dudoxx_automation/static/src/js/render_properties_widget.js"
+            "/dudoxx_automation/static/src/js/render_properties_widget.js",
+            "dudoxx_automation/static/src/js/countdown_widget.js",
+            "dudoxx_automation/static/src/xml/countdown_widget_template.xml"
         ]
     },
     "installable": True,

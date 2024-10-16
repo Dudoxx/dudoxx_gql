@@ -1,0 +1,10 @@
+<!-- static/src/xml/countdown_widget_template.xml -->
+<templates>
+    <t t-name="dudoxx_automation.CountdownWidget" owl="1">
+        <div class="o_countdown_widget">
+            <div t-att-style="'font-size: ' + state.fontSize + 'px;'">
+                <t t-esc="state.countdown"/>
+            </div>
+        </div>
+    </t>
+</templates>
