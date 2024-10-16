@@ -22,11 +22,11 @@
                     <sheet>
                         <group>
                             <!-- Apply the RenderPropertiesWidget to display parent record properties -->
-                            <field name="name" widget="render_properties"/>
+                            <field name="name" widget="render_properties" options="{'recordData': {'name': name, 'status': status}}"/>
                             <field name="name"/>
                             <field name="status"/>
                             <!-- Apply the CountdownWidget to display a countdown -->
-                            <field name="name" widget="countdown_widget"/>
+                            <field name="countdown_field" widget="countdown_widget"/>
                         </group>
                     </sheet>
                 </form>
