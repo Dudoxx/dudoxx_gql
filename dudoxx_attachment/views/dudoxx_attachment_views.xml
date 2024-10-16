@@ -20,14 +20,14 @@
 			<field name="arch" type="xml">
 				<form string="Attachment">
 					<header>
-						<button name="submit_for_review" type="object" string="Submit for Review" attrs="{'invisible': [('status', '!=', 'draft')]}"/>
-						<button name="approve_review" type="object" string="Approve Review" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
-						<button name="reject_review" type="object" string="Reject Review" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
-						<button name="finalize_document" type="object" string="Finalize" attrs="{'invisible': [('status', '!=', 'reviewed')]}"/>
+						<button name="submit_for_review" type="object" string="Submit for Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'draft')]}"/>
+						<button name="approve_review" type="object" string="Approve Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
+						<button name="reject_review" type="object" string="Reject Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
+						<button name="finalize_document" type="object" string="Finalize" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'reviewed')]}"/>
 
-						<button name="back_to_draft" type="object" string="Back to Draft" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
-						<button name="back_to_pending_review" type="object" string="Back to Pending Review" attrs="{'invisible': ['|',('status', '!=', 'reviewed'),('status', '!=', 'rejected')]}"/>
-
+						<button name="back_to_draft" type="object" string="Back to Draft" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'pending_review')]}"/>
+						<button name="back_to_pending_review" type="object" string="Back to Pending Review" class="ddx_attachment_btn" attrs="{'invisible': ['|', ('status', '!=', 'reviewed'), ('status', '!=', 'rejected')]}"/>
+						<button name="back_to_review" type="object" string="Back to Review" class="ddx_attachment_btn" attrs="{'invisible': [('status', '!=', 'finalized')]}"/>
 					</header>
 					<sheet>
 						<div class="ddx_attachment_form_section ddx_attachment_grid_2">
