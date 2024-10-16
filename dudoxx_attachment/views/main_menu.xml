@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="dudoxx_attachment_action_window" model="ir.actions.act_window">
+            <field name="name">Dudoxx Attachments</field>
+            <field name="res_model">dudoxx.attachment</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <menuitem id="dudoxx_attachment_main_menu" name="Dudoxx Attachments"
+                  
+                  sequence="10"
+                  action="dudoxx_attachment_action_window"/>
+
+   
+    </data>
+</odoo>

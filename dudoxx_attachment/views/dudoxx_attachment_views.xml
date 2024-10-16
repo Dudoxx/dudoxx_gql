@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="dudoxx_attachment_tree_view" model="ir.ui.view">
+			<field name="name">dudoxx.attachment.tree</field>
+			<field name="model">dudoxx.attachment</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+					<field name="file_name" />
+					<field name="creation_date" />
+					<field name="owner" />
+					<field name="status" widget="statusbar"/>
+				</tree>
+			</field>
+		</record>
+		<record id="dudoxx_attachment_form_view" model="ir.ui.view">
+			<field name="name">dudoxx.attachment.form</field>
+			<field name="model">dudoxx.attachment</field>
+			<field name="arch" type="xml">
+				<form string="Attachment">
+					<sheet>
+						<div class="ddx_attachment_form_section ddx_attachment_grid_2">
+							<field name="name"/>
+							<field name="file_name"/>
+							<field name="content_type"/>
+							<field name="hash_code"/>
+							<field name="file_data" filename="file_name"/>
+							
+						</div>
+						<div class="ddx_attachment_form_section">
+							<group>
+								<field name="creation_date" />
+								<field name="owner" />
+								<field name="status" widget="statusbar"/>
+							</group>
+						</div>
+						<button string="Recalculate Hash" type="object" name="update_checksum" class="ddx_attachment_btn"/>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="dudoxx_attachment_kanban_view" model="ir.ui.view">
+			<field name="name">dudoxx.attachment.kanban</field>
+			<field name="model">dudoxx.attachment</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<field name="name" />
+					<field name="status" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_kanban_global_click">
+								<div class="oe_kanban_details">
+									<strong class="o_kanban_record_title">
+										<field name="name" />
+									</strong>
+									<ul>
+										<li>
+											Status:
+											<field name="status" widget="statusbar"/>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+	</data>
+</odoo>
