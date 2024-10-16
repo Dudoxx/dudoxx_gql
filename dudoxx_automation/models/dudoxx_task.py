@@ -12,3 +12,4 @@ class DudoxxTask(models.Model):
         string="Status",
         default='new'
     )
+    countdown_field = fields.Integer(string="Countdown", default=10)
