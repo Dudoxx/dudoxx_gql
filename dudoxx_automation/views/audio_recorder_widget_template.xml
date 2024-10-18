@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="audio_recorder_widget" name="Audio Recorder Widget">
+        <div class="audio-recorder-widget">
+            <button type="button" class="btn btn-primary start-recording">
+                <i class="fa fa-microphone"></i> Start Recording
+            </button>
+            <button type="button" class="btn btn-danger stop-recording" disabled="disabled">
+                <i class="fa fa-stop"></i> Stop Recording
+            </button>
+            <button type="button" class="btn btn-success play-audio" t-att-disabled="widget.value ? None : 'disabled'">
+                <i class="fa fa-play"></i> Play Audio
+            </button>
+            <div class="mt-2 audio-status"></div>
+        </div>
+    </template>
+
+    <template id="audio_recorder_widget_readonly" name="Audio Recorder Widget (Readonly)">
+        <div class="audio-recorder-widget-readonly">
+            <button type="button" class="btn btn-success play-audio" t-att-disabled="widget.value ? None : 'disabled'">
+                <i class="fa fa-play"></i> Play Audio
+            </button>
+        </div>
+    </template>
+</odoo>
